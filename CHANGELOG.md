@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/mindevis/essentialsqx/compare/v1.0.4...v1.0.5) (2026-04-19)
+
+
+### Bug Fixes
+
+* bootstrap semantic-release for github releases ([5a601ba](https://github.com/mindevis/essentialsqx/commit/5a601bafef1d4c5252d8f5247a5d8201a901cae7))
+
 ## [1.0.4](https://github.com/mindevis/qm-project/compare/essentialsqx-v1.0.3...essentialsqx-v1.0.4) (2026-04-19)
 
 
