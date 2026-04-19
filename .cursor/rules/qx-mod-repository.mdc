@@ -1,0 +1,10 @@
+---
+description: QX mod repo — VERSION matches gradle mod_version; tags v*; GitHub Actions
+alwaysApply: true
+---
+
+# QX mod (this Git repository)
+
+- **`VERSION`** (semver, one line) must match **`mod_version`** in **`gradle.properties`**.
+- On meaningful changes: update **`CHANGELOG.md`**, bump **`VERSION`** / **`mod_version`**, **commit**, **`git push`**, annotated tag **`vX.Y.Z`**, **`git push origin vX.Y.Z`**.
+- **Architectury repos:** CI must run both **`:fabric:build`** and **`:neoforge:build`**; release on **`v*`** should attach both JAR artifacts.

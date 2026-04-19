@@ -1,0 +1,67 @@
+plugins {
+	id "architectury-plugin" version "3.4-SNAPSHOT"
+	id "dev.architectury.loom" version "1.10-SNAPSHOT" apply false
+	id "idea"
+}
+
+architectury {
+	minecraft = rootProject.minecraft_version
+}
+
+subprojects {
+	apply plugin: "dev.architectury.loom"
+
+	loom {
+		silentMojangMappingsLicense()
+
+		runs {
+			client {
+				vmArgs "-Xmx4G"
+				programArgs "--width", "1920", "--height", "1080"
+			}
+		}
+	}
+
+	dependencies {
+		minecraft "com.mojang:minecraft:${rootProject.minecraft_version}"
+		mappings loom.officialMojangMappings()
+	}
+}
+
+allprojects {
+	apply plugin: "java"
+	apply plugin: "architectury-plugin"
+	apply plugin: "maven-publish"
+
+	version = rootProject.mod_version
+	group = rootProject.maven_group
+
+	base {
+		archivesName = rootProject.archives_base_name
+	}
+
+	sourceCompatibility = targetCompatibility = JavaVersion.VERSION_21
+
+	compileJava {
+		options.encoding = "UTF-8"
+	}
+
+	repositories {
+		mavenLocal()
+		maven {
+			url "https://maven.architectury.dev/"
+			content {
+				includeGroup "dev.architectury"
+			}
+		}
+		maven {
+			url "https://maven.wispforest.io/releases/"
+		}
+		maven {
+			url "https://jitpack.io"
+		}
+	}
+}
+
+// Корневой проект без исходников — иначе Gradle собирает пустой skilltreeqx-1.0.0.jar (это не мод)
+jar.enabled = false
