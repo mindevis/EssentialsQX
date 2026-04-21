@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/mindevis/essentialsqx/compare/v1.0.5...v1.1.0) (2026-04-21)
+
+
+### Features
+
+* add /qxdump commands for item CSV dumps (1.21.1) ([5e732c0](https://github.com/mindevis/essentialsqx/commit/5e732c068125765ffafb569ce812d026f37783c1))
+
 ## [1.0.5](https://github.com/mindevis/essentialsqx/compare/v1.0.4...v1.0.5) (2026-04-19)
 
 
